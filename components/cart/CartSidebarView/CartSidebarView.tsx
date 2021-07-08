@@ -113,7 +113,7 @@ const CartSidebarView: FC = () => {
                 <span>{total}</span>
               </div>
             </div>
-            <a href="/checkout" css={{ width: '100%' }}>
+            <a href="/checkout" style={{ width: '100%' }}>
               Proceed to Checkout
             </a>
           </div>
