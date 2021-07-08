@@ -5,8 +5,12 @@ import type { GetSiteInfoOperation } from '../types/site';
 import type { GetCustomerWishlistOperation } from '../types/wishlist';
 import type { GetAllProductPathsOperation, GetAllProductsOperation, GetProductOperation } from '../types/product';
 import type { APIProvider, CommerceAPI } from '.';
-import { GetAllBlogsOperation, GetAllBlogPathsOperation, GetBlogOperation } from '@framework/types/blog';
-import { GetAllArticlePathsOperation, GetAllArticlesOperation, GetArticleOperation } from '@framework/types/article';
+import type { GetAllBlogsOperation, GetAllBlogPathsOperation, GetBlogOperation } from '@framework/types/blog';
+import type {
+  GetAllArticlePathsOperation,
+  GetAllArticlesOperation,
+  GetArticleOperation,
+} from '@framework/types/article';
 
 const noop = () => {
   throw new Error('Not implemented');

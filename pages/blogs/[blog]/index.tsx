@@ -3,11 +3,11 @@ import { useRouter } from 'next/router';
 import commerce from '@lib/api/commerce';
 import { Layout } from '@components/common';
 
-export async function getStaticProps({ params }: GetStaticPropsContext<{ news: string }>) {
-  const { blog } = await commerce.getBlog({ variables: { slug: params!.news } });
+export async function getStaticProps({ params }: GetStaticPropsContext<{ blog: string }>) {
+  const { blog } = await commerce.getBlog({ variables: { slug: params!.blog } });
 
   if (!blog) {
-    throw new Error(`Blog with slug '${params!.news}' not found`);
+    throw new Error(`Blog with slug '${params!.blog}' not found`);
   }
 
   return {

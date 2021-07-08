@@ -50,6 +50,8 @@ export async function getStaticPaths({ locales }: GetStaticPathsContext) {
     });
   log();
 
+  console.log(paths);
+
   return {
     paths,
     fallback: 'blocking',

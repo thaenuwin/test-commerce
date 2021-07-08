@@ -17,7 +17,7 @@ export default function Wishlist() {
           {isLoading || isEmpty ? (
             <div className="flex-1 px-12 py-24 flex flex-col justify-center items-center ">
               <span className="border border-dashed border-secondary flex items-center justify-center w-16 h-16 bg-primary p-12 rounded-lg text-primary">
-                <Heart className="absolute" />
+                Heart
               </span>
               <h2 className="pt-6 text-2xl font-bold tracking-wide text-center">Your wishlist is empty</h2>
               <p className="text-accents-6 px-10 text-center pt-2">

@@ -27,7 +27,7 @@ export default function Cart() {
         {isLoading || isEmpty ? (
           <div className="flex-1 px-12 py-24 flex flex-col justify-center items-center ">
             <span className="border border-dashed border-secondary flex items-center justify-center w-16 h-16 bg-primary p-12 rounded-lg text-primary">
-              <Bag className="absolute" />
+              Bag
             </span>
             <h2 className="pt-6 text-2xl font-bold tracking-wide text-center">Your cart is empty</h2>
             <p className="text-accents-6 px-10 text-center pt-2">
@@ -36,18 +36,14 @@ export default function Cart() {
           </div>
         ) : error ? (
           <div className="flex-1 px-4 flex flex-col justify-center items-center">
-            <span className="border border-white rounded-full flex items-center justify-center w-16 h-16">
-              <Cross width={24} height={24} />
-            </span>
+            <span className="border border-white rounded-full flex items-center justify-center w-16 h-16">Cross</span>
             <h2 className="pt-6 text-xl font-light text-center">
               We couldn’t process the purchase. Please check your card information and try again.
             </h2>
           </div>
         ) : success ? (
           <div className="flex-1 px-4 flex flex-col justify-center items-center">
-            <span className="border border-white rounded-full flex items-center justify-center w-16 h-16">
-              <Check />
-            </span>
+            <span className="border border-white rounded-full flex items-center justify-center w-16 h-16">Check</span>
             <h2 className="pt-6 text-xl font-light text-center">Thank you for your order.</h2>
           </div>
         ) : (
@@ -81,9 +77,7 @@ export default function Cart() {
               {/* Shipping Address */}
               {/* Only available with customCheckout set to true - Meaning that the provider does offer checkout functionality. */}
               <div className="rounded-md border border-accents-2 px-6 py-6 mb-4 text-center flex items-center justify-center cursor-pointer hover:border-accents-4">
-                <div className="mr-5">
-                  <MapPin />
-                </div>
+                <div className="mr-5">Pin</div>
                 <div className="text-sm text-center font-medium">
                   <span className="uppercase">+ Add Shipping Address</span>
                   {/* <span>
@@ -95,9 +89,7 @@ export default function Cart() {
               {/* Payment Method */}
               {/* Only available with customCheckout set to true - Meaning that the provider does offer checkout functionality. */}
               <div className="rounded-md border border-accents-2 px-6 py-6 mb-4 text-center flex items-center justify-center cursor-pointer hover:border-accents-4">
-                <div className="mr-5">
-                  <CreditCard />
-                </div>
+                <div className="mr-5">Credit Card</div>
                 <div className="text-sm text-center font-medium">
                   <span className="uppercase">+ Add Payment Method</span>
                   {/* <span>VISA #### #### #### 2345</span> */}

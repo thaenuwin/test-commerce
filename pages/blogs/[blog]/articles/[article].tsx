@@ -23,7 +23,7 @@ export async function getStaticPaths() {
   const { articles } = await commerce.getAllArticlePaths();
 
   return {
-    paths: articles.map((article) => `/blogs/${article.blog}/articles/${article.slug}`),
+    paths: articles.map((article) => `/blogs/${article.blog}/articles/${article.handle}`),
     fallback: 'blocking',
   };
 }

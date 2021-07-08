@@ -1,3 +1,5 @@
+import { Blog } from './blog';
+
 type SEO = {
   __typename?: 'SEO' | undefined;
   description?: string | undefined | null;
@@ -17,6 +19,7 @@ export type Article = {
   tags?: string[];
   seo?: SEO | null;
   slug?: string;
+  blog: Blog;
 };
 
 export type ArticleTypes = {
@@ -34,7 +37,7 @@ export type GetArticleOperation<T extends ArticleTypes = ArticleTypes> = {
 };
 
 export type ArticlePaths<T extends ArticleTypes = ArticleTypes> = {
-  slug: string;
+  handle: string;
   blog: string;
 };
 
