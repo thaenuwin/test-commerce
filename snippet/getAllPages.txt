@@ -1,0 +1,20 @@
+/*
+ * Sample code for getting all the Pages in the shopify backend.
+ */
+
+import commerce from '@lib/api/commerce'
+import type { GetStaticPropsContext } from 'next'
+
+export async function getStaticProps({
+  preview,
+  locale,
+  locales,
+}: GetStaticPropsContext) {
+  const config = { locale, locales }
+  const { pages } = await commerce.getAllPages({ config, preview })
+
+  return {
+    props: { pages },
+    revalidate: 14400,
+  }
+}

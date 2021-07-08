@@ -1,0 +1,19 @@
+API
+- Look for the API for Forgot Password
+
+Components
+- Remove default Components
+- Implement simple components only
+
+Tailwind
+- Update tailwind config, use the full one
+
+Assets
+- Removed default Assets
+
+Public Files
+- Removed default Files
+
+Global
+- Remove module specific css
+- Implement React Hook Form or other similar module to handle the Form

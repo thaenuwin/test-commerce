@@ -1,0 +1,24 @@
+/*
+ * Sample code for getting the Products.
+ */
+
+import commerce from '@lib/api/commerce'
+import type { GetStaticPropsContext } from 'next'
+
+export async function getStaticProps({
+  preview,
+  locale,
+  locales,
+}: GetStaticPropsContext) {
+  const config = { locale, locales }
+  const { products } = await commerce.getAllProducts({
+    variables: { first: 12 }, // TODO: Put all the available params that can passed in here.
+    config,
+    preview,
+  })
+
+  return {
+    props: { products },
+    revalidate: 14400,
+  }
+}
