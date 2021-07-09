@@ -16,7 +16,7 @@ const LOCALES_MAP: Record<string, LOCALE_DATA> = {
   'zh-CN': {
     name: 'Chinese',
     img: {
-      filename: 'flag-zh-cn.svg',
+      filename: 'flag-zh-cn.png',
       alt: 'Chinese Flag',
     },
   },
@@ -25,6 +25,20 @@ const LOCALES_MAP: Record<string, LOCALE_DATA> = {
     img: {
       filename: 'flag-en-us.svg',
       alt: 'US Flag',
+    },
+  },
+  'my': {
+    name: 'Myanmar',
+    img: {
+      filename: 'flag-my.svg',
+      alt: 'Myanmar Flag',
+    },
+  },
+  'es': {
+    name: 'Spainish',
+    img: {
+      filename: 'flag-es.svg',
+      alt: 'Spain Flag',
     },
   },
 };
