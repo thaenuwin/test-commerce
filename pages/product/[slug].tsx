@@ -2,16 +2,22 @@ import type { GetStaticPathsContext, GetStaticPropsContext, InferGetStaticPropsT
 import { useRouter } from 'next/router';
 import commerce from '@lib/api/commerce';
 import { Layout } from '@components/common';
+import { ProductView } from '@components/product';
 
 export async function getStaticProps({ params, locale, locales, preview }: GetStaticPropsContext<{ slug: string }>) {
   const config = { locale, locales };
-  const { pages } = await commerce.getAllPages({ config, preview });
   const { product } = await commerce.getProduct({
     variables: { slug: params!.slug },
     config,
     preview,
   });
-  const { categories } = await commerce.getSiteInfo({ config, preview });
+  const { products } = await commerce.getAllProducts({
+    variables: { first: 4 },
+    config,
+    preview,
+  });
+
+  console.log(products);
 
   if (!product) {
     throw new Error(`Product with slug '${params!.slug}' not found`);
@@ -19,9 +25,8 @@ export async function getStaticProps({ params, locale, locales, preview }: GetSt
 
   return {
     props: {
-      pages,
       product,
-      categories,
+      relatedProducts: products,
     },
     revalidate: 200,
   };
@@ -44,14 +49,14 @@ export async function getStaticPaths({ locales }: GetStaticPathsContext) {
   };
 }
 
-export default function Slug({ product }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Slug({ product, relatedProducts }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter();
 
   return router.isFallback ? (
     <h1>Loading...</h1>
   ) : (
     <>
-      <div>Product View Template</div>
+      <ProductView product={product} relatedProducts={relatedProducts} />
     </>
   );
 }

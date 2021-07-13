@@ -1,15 +1,12 @@
-const commerce = require('./commerce.config.json')
-const {
-  withCommerceConfig,
-  getProviderName,
-} = require('./framework/commerce/config')
+const commerce = require('./commerce.config.json');
+const { withCommerceConfig, getProviderName } = require('./framework/commerce/config');
 
-const provider = commerce.provider || getProviderName()
-const isBC = provider === 'bigcommerce'
-const isShopify = provider === 'shopify'
-const isSaleor = provider === 'saleor'
-const isSwell = provider === 'swell'
-const isVendure = provider === 'vendure'
+const provider = commerce.provider || getProviderName();
+const isBC = provider === 'bigcommerce';
+const isShopify = provider === 'shopify';
+const isSaleor = provider === 'saleor';
+const isSwell = provider === 'swell';
+const isVendure = provider === 'vendure';
 
 module.exports = withCommerceConfig({
   future: {
@@ -53,9 +50,9 @@ module.exports = withCommerceConfig({
         source: '/search/:category',
         destination: '/search',
       },
-    ].filter(Boolean)
+    ].filter(Boolean);
   },
-})
+});
 
 // Don't delete this console log, useful to see the commerce config in Vercel deployments
-console.log('next.config.js', JSON.stringify(module.exports, null, 2))
+console.log('next.config.js', JSON.stringify(module.exports, null, 2));
